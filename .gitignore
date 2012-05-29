@@ -5,7 +5,8 @@ Tail.*
 !Tail.xs
 Makefile*
 !Makefile.PL
-META.yml
+META.*
+MYMETA.*
 blib
 build
 inc
