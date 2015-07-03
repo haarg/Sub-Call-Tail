@@ -1,4 +1,5 @@
 package Sub::Call::Tail;
+# ABSTRACT: Tail calls for subroutines and methods
 
 use strict;
 use warnings;
@@ -24,10 +25,6 @@ __END__
 
 =pod
 
-=head1 NAME
-
-Sub::Call::Tail - Tail calls for subroutines and methods
-
 =head1 SYNOPSIS
 
     use Sub::Call::Tail;
@@ -51,17 +48,5 @@ at compile time into a goto.
 L<B::Hooks::OP::Check::EntersubForCV>
 
 L<CPS>
-
-=head1 AUTHOR
-
-Yuval Kogman
-
-Andrew Main (Zefram)
-
-=head1 COPYRIGHT & LICENSE
-
-	Copyright (c) 2009 Yuval Kogman. All rights reserved
-	This program is free software; you can redistribute
-	it and/or modify it under the same terms as Perl itself.
 
 =cut
