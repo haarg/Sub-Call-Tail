@@ -1,5 +1,7 @@
 Revision history for Sub-Call-Tail
 
+{{ $NEXT }}
+
 0.06      2015-07-03 23:15:54Z
           - fix breakage by v5.17.5-247-g049bd5f (RT#81860, Zefram)
           - warning added to docs, at the author's request
