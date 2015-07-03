@@ -11,37 +11,37 @@ our @activity;
 
 sub t0r { [ "r0", @_, "r1" ] }
 sub t0a {
-	my $a = $_[0]+2;
-	tail t0r($a+3, 17);
-	return "x";
+    my $a = $_[0]+2;
+    tail t0r($a+3, 17);
+    return "x";
 }
 is_deeply t0a(100), [ "r0", 105, 17, "r1" ];
 
 sub t1r { [ "r0", @_, "r1" ] }
 sub t1a {
-	if($_[0]) {
-		tail t1r("x");
-	} else {
-		tail t1r("y");
-	}
+    if($_[0]) {
+        tail t1r("x");
+    } else {
+        tail t1r("y");
+    }
 }
 is_deeply t1a(0), [ "r0", "y", "r1" ];
 is_deeply t1a(1), [ "r0", "x", "r1" ];
 
 sub t2r {
-	push @activity, [
-		wantarray ? "ARRAY" : defined(wantarray) ? "SCALAR" : "VOID",
-		@_,
-	];
-	return "z", "zz";
+    push @activity, [
+        wantarray ? "ARRAY" : defined(wantarray) ? "SCALAR" : "VOID",
+        @_,
+    ];
+    return "z", "zz";
 }
 sub t2a {
-	tail t2r("x", @_, "y");
+    tail t2r("x", @_, "y");
 }
 sub t2b {
-	push @activity, "wibble";
-	tail t2r("x", @_, "y");
-	push @activity, "wobble";
+    push @activity, "wibble";
+    tail t2r("x", @_, "y");
+    push @activity, "wobble";
 }
 @activity = ();
 t2a(1,2,3);
@@ -79,8 +79,8 @@ is_deeply t4a(), [ "x", 123 ];
 
 sub t5r { [ "t5r", @_ ] }
 sub t5a {
-	my $a = $_[0] ? tail(t5r(123)) : 2;
-	return $a + 10;
+    my $a = $_[0] ? tail(t5r(123)) : 2;
+    return $a + 10;
 }
 is_deeply t5a(0), 12;
 is_deeply t5a(1), [ "t5r", 123 ];
@@ -95,16 +95,16 @@ is_deeply \@activity, [ "t6c", "t6r" ];
 
 sub t7r { [ "r0", @_, "r1" ] }
 sub t7a {
-	tail &t0r("x", @_, "y");
-	return "x";
+    tail &t0r("x", @_, "y");
+    return "x";
 }
 sub t7b {
-	tail &t0r();
-	return "x";
+    tail &t0r();
+    return "x";
 }
 sub t7c {
-	tail &t0r;
-	return "x";
+    tail &t0r;
+    return "x";
 }
 is_deeply t7a("a"), [ "r0", "x", "a", "y", "r1" ];
 is_deeply t7b("a"), [ "r0", "r1" ];
