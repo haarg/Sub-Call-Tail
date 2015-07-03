@@ -7,8 +7,7 @@ require 5.008001;
 use parent qw(Exporter DynaLoader);
 use B::Hooks::OP::Check::EntersubForCV;
 
-our $VERSION = '0.05';
-$VERSION = eval $VERSION;
+our $VERSION = '0.06';
 
 our @EXPORT = our @EXPORT_OK = qw(tail);
 our %EXPORT_TAGS = ( all => \@EXPORT_OK );
@@ -52,10 +51,6 @@ at compile time into a goto.
 L<B::Hooks::OP::Check::EntersubForCV>
 
 L<CPS>
-
-=head1 VERSION CONTROL
-
-L<http://github.com/nothingmuch/Sub-Call-Tail>
 
 =head1 AUTHOR
 
