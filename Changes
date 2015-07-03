@@ -2,6 +2,7 @@ Revision history for Sub-Call-Tail
 
 {{ $NEXT }}
           - fix breakage by v5.17.5-247-g049bd5f (RT#81860, Zefram)
+          - warning added to docs, at the author's request
 
 0.05      2012-05-29
           - Remove the deprecated use of qw() as parens in Makefile.PL

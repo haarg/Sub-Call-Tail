@@ -43,6 +43,12 @@ will cause the invocation to have the same semantics as C<goto &sub>.
 When the C<tail> modifier is compiled the inner subroutine call is transformed
 at compile time into a goto.
 
+=head1 USAGE WARNING
+
+<B>WARNING! The author does not endorse using this module for anything real.
+It was written primarily to demonstrate that such quackery can be achieved.
+Use at your own risk!
+
 =head1 SEE ALSO
 
 L<B::Hooks::OP::Check::EntersubForCV>
