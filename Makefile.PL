@@ -1,6 +1,9 @@
 use strict;
 use warnings;
 
+use lib 'inc';
+use ExtUtils::MakeMaker::Dist::Zilla::Develop;
+
 # these bits are exactly the same as the original code from Module::Install
 # In the future we will probably want to switch to ExtUtils::HasCompiler.
 unless ( can_cc() ) {
