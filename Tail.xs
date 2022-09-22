@@ -142,7 +142,11 @@ try_autoload:
      * entersub. We set it up so that defgv is pointing at the pushed args as
      * set up by the entersub call, this will let pp_goto work unmodified */
 
+#if PERL_VERSION_GE(5,23,8)
+    av = MUTABLE_AV(PAD_SVl(0));
+#else
     av = cx->blk_sub.argarray;
+#endif
 
     /* abandon @_ if it got reified */
     if (AvREAL(av)) {
@@ -150,7 +154,9 @@ try_autoload:
         av = newAV();
         AvREIFY_only(av);
 
+#if PERL_VERSION_LT(5,23,8)
         cx->blk_sub.argarray = av;
+#endif
         PAD_SVl(0) = (SV *)av;
     }
 
