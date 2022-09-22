@@ -81,7 +81,8 @@ goto_entersub (pTHX) {
                 if (!sym)
                     DIE(aTHX_ PL_no_usym, "a subroutine");
                 if (PL_op->op_private & HINT_STRICT_REFS)
-                    DIE(aTHX_ PL_no_symref, sym, "a subroutine");
+                    DIE(aTHX_ "Can't use string (\"%.32s\") as %s ref while \"strict refs\" in use",
+                        sym, "a subroutine");
                 cv = get_cv(sym, GV_ADD|SvUTF8(sv));
                 break;
             }
