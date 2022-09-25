@@ -49,3 +49,7 @@ WriteMakefile(
     $pkg->get_makefile_vars,
     DL_FUNCS => { 'Sub::Call::Tail' => [] },
 );
+
+use Devel::PPPort;
+Devel::PPPort::WriteFile();
+system("$^X ppport.h --compat-version=5.008001 --quiet *.xs");
