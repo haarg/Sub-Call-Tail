@@ -1,6 +1,6 @@
 Revision history for Sub-Call-Tail
 
-{{ $NEXT }}
+0.07      2022-09-25 01:58:23Z
           - update bundled version of ExtUtils::HasCompiler, for new new Apple
             include paths
           - fixes for perls >= 5.23.8 (Graham Knop, PR#1)
