@@ -8,7 +8,7 @@ require 5.008001;
 use parent qw(Exporter DynaLoader);
 use B::Hooks::OP::Check::EntersubForCV;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 our @EXPORT = our @EXPORT_OK = qw(tail);
 our %EXPORT_TAGS = ( all => \@EXPORT_OK );
