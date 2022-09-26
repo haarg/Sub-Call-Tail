@@ -4,8 +4,9 @@ package Sub::Call::Tail;
 use strict;
 use warnings;
 
-require 5.008001;
-use parent qw(Exporter DynaLoader);
+use 5.008001;
+use parent qw(Exporter);
+use XSLoader ();
 use B::Hooks::OP::Check::EntersubForCV;
 
 our $VERSION = '0.08';
@@ -13,9 +14,7 @@ our $VERSION = '0.08';
 our @EXPORT = our @EXPORT_OK = qw(tail);
 our %EXPORT_TAGS = ( all => \@EXPORT_OK );
 
-__PACKAGE__->bootstrap($VERSION);
-
-pop our @ISA;
+XSLoader::load(__PACKAGE__, $VERSION);
 
 # ex: set sw=4 et:
 
